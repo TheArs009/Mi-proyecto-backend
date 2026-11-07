@@ -1,0 +1,25 @@
+$kind: http-request
+url: "{{baseUrl}}auth/login"
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \  \"email\": \"{{userEmail}}\",\r
+
+    \  \"password\": \"{{userPassword}}\"\r
+
+    }"
+scripts:
+  - type: afterResponse
+    code: "const data = pm.response.json();\r
+
+      const token = data.token || data.accessToken || data.data?.token || data.data?.accessToken;\r
+
+      \r
+
+      if (token) pm.collectionVariables.set('userToken', token);\r
+
+      else console.log('No se encontró token:', data);"
+    language: text/javascript
+order: 2000

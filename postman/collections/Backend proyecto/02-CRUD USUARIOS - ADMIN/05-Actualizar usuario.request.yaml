@@ -1,0 +1,19 @@
+$kind: http-request
+url: "{{baseUrl}}users/update/{{userId}}"
+method: PUT
+headers:
+  Authorization: Bearer {{adminToken}}
+body:
+  type: json
+  content: "{\r
+
+    \  \"nombre\": \"Usuario Postman Actualizado\",\r
+
+    \  \"email\": \"usuario.postman.actualizado@gmail.com\",\r
+
+    \  \"rol_id\": 2,\r
+
+    \  \"administrador_id\": 1\r
+
+    }\r\n"
+order: 5000

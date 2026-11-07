@@ -1,0 +1,9 @@
+$kind: http-request
+url: "{{baseUrl}}users?email={{userEmail}}"
+method: GET
+headers:
+  email: "{{userEmail}}"
+  Authorization: Bearer {{adminToken}}
+queryParams:
+  email: "{{userEmail}}"
+order: 3000

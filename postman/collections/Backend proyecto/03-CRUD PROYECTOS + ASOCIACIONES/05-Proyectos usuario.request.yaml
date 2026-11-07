@@ -1,0 +1,17 @@
+$kind: http-request
+url: "{{baseUrl}}projects/associate"
+method: POST
+headers:
+  Authorization: Bearer {{adminToken}}
+body:
+  type: json
+  content: "{\r
+
+    \  \"proyecto_id\": 6,\r
+
+    \  \"usuario_id\": 14\r
+
+    }"
+auth:
+  type: noauth
+order: 5000

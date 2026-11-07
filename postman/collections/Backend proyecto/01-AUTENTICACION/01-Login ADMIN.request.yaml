@@ -1,0 +1,23 @@
+$kind: http-request
+url: "{{baseUrl}}auth/login"
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \  \"email\": \"{{adminEmail}}\",\r
+
+    \  \"password\": \"{{adminPassword}}\"\r
+
+    }"
+scripts:
+  - type: afterResponse
+    code: "const data = pm.response.json();\r
+
+      const token = data.token || data.accessToken || data.data?.token || data.data?.accessToken;\r
+
+      if (token) pm.collectionVariables.set('adminToken', token);\r
+
+      else console.log('No se encontro token:', data);"
+    language: text/javascript
+order: 1000

@@ -1,0 +1,25 @@
+$kind: http-request
+url: "{{baseUrl}}users/create"
+method: POST
+headers:
+  Content-Type: application/json
+  Authorization: Bearer {{adminToken}}
+body:
+  type: json
+  content: "{\r
+
+    \  \"nombre\": \"jose\",\r
+
+    \  \"email\": \"jose@gmail.com\",\r
+
+    \  \"password\": \"{{newUserPassword}}\",\r
+
+    \  \"rol_id\": 2,\r
+
+    \  \"administrador_id\": 1\r
+
+    }"
+auth:
+  type: noauth
+examples: .resources/01-Crear Usuario.resources/examples
+order: 1000

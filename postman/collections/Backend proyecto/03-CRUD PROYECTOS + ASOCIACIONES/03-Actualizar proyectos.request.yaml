@@ -1,0 +1,17 @@
+$kind: http-request
+url: "{{baseUrl}}projects/update"
+method: PUT
+headers:
+  Authorization: Bearer {{adminToken}}
+body:
+  type: json
+  content: "{\r
+
+    \  \"proyecto_id\": 1,\r
+
+    \  \"nombre\": \"Michis actualizado\",\r
+
+    \  \"descripcion\": \"Proyecto de rescate de michis\"\r
+
+    }"
+order: 3000

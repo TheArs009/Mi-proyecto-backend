@@ -1,0 +1,16 @@
+$kind: http-request
+url: "{{baseUrl}}projects/disassociate"
+method: DELETE
+headers:
+  Authorization: Bearer {{adminToken}}
+  "": ""
+body:
+  type: json
+  content: "{\r
+
+    \  \"proyecto_id\": 1,\r
+
+    \  \"usuario_id\": 8\r
+
+    }"
+order: 6000

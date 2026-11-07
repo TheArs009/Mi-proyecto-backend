@@ -1,0 +1,12 @@
+$kind: collection
+variables:
+  baseUrl: ""
+  adminToken: ""
+  userToken: ""
+  adminEmail: ""
+  userEmail: ""
+  adminPassword: ""
+  userPassword: ""
+  userId: ""
+  projectId: ""
+  rolId: ""
